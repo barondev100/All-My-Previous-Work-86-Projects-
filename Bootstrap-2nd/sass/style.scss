@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap');
+@import 'variables';
+@import 'bootstrap';
+
+body{
+    font-family: 'Sansita Swashed', cursive;
+}
+.top-bar{
+    background: $primary;
+    padding: .5em 0;
+}
+.jumbotron{
+    margin-bottom: 0;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+    background-image: url('../img/background.jpg');
+    background-size:cover;
+    color: $secondary;
+    background-position: center bottom;
+    background-attachment: fixed;
+}
+.intro{
+    background-color: $primary;
+    padding: 10vh 0;
+}
+.services{
+    padding: $section-padding;
+}
+
+footer{
+    background: $dark;
+    padding: $section-padding;
+    color: white;
+}
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}

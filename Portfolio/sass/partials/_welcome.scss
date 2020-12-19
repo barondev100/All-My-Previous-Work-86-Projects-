@@ -1,0 +1,43 @@
+.welcome{
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    h1{
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: $fw-n;
+        line-height: 1.5;
+        text-align: center;
+        @include mq{
+            font-size: 3vw;
+        }
+    span{
+        @include sans-serif($fs: 3.2rem,$color: $blue);
+        display: block;
+        text-align: center;
+        @include mq{
+            font-size: 5vw;
+        }
+    }
+    &::before,
+    &::after
+    {
+        content : "";
+        width: 30%;
+        height: 1px;
+        background-color: #fff;
+        display: block;
+    }
+    &:before{
+        margin: 0 auto 2em;
+    }
+     &:after{
+        margin: 2em auto 0;
+    }
+    }
+}

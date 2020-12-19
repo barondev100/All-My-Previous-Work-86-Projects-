@@ -1,0 +1,69 @@
+<!Doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BookMarker Site!</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+
+  </head>
+
+  <body onload="fetchBookmarks()">
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-light">    
+        <h3>BookMark Project!</h3>
+    </nav>
+
+    <main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-4 text-center mb-4">BookMark Your Favorite Sites!</h1>
+        <form id="myForm">
+            <div class="form-group">
+                <label for="siteName" class="display-4">Site Name!</label>
+                <input type="text" class="form-control" id="siteName" placeholder="Website Name!"> 
+            </div>
+
+            <div class="form-group">
+                <label for="siteName" class="display-4">Site URL!</label>
+                <input type="text" class="form-control" id="siteURL" placeholder="Website URL!"> 
+            </div>
+
+            <button type="submit" class="btn btn-primary">Make It Happen!</button>
+        </form>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-lg-12">
+           <div id="bookmarksResults"></div>
+          </div>
+          
+        
+        </div>
+
+    
+
+      </div> <!-- /container -->
+
+    </main>
+
+
+
+
+  </body>
+  <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="script.js" async></script>
+</html>

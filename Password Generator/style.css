@@ -1,0 +1,74 @@
+
+body{
+    background-color: #222;
+    color: aliceblue;
+    margin: 0;
+    display: flex; 
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    background-color: steelblue;
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 2px solid tan;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1rem;
+    column-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    margin: 0;
+    text-align: center;
+}
+label{
+    font-weight: bold;
+}
+.character-amount{
+    display: flex;
+    align-items: center;
+}
+.number-input{
+    width: 3rem;
+}
+
+.password-display{
+    background-color: white;
+    color: steelblue;
+    padding: 1rem;
+    border: 2px solid tan;
+    height: 2rem;
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    word-break: break-all;
+    border-radius: .5rem;
+}
+
+button{
+    grid-column: span 2;
+    background: transparent;
+    border: 2px solid tan;
+    padding: .5rem 1rem;
+    color: aliceblue;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+button:hover{
+    background: #ffffff33
+}

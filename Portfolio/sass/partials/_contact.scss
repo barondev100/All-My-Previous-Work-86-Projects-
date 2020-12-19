@@ -1,0 +1,65 @@
+.contact{
+    @include container;
+    padding: 5em 0;
+    h1{
+        text-align: center;
+    }
+}
+form{
+    display: flex;
+    flex-direction: column;
+    @supports(display: grid){
+        @include mq{
+            grid-column-gap: 1em;
+            grid-column: 1fr 1fr;
+            grid-template-areas: 
+            'name email'
+        'message message '
+        '.  button';
+        #name{
+            grid-area: name;
+        }
+        #email{
+            grid-area: email;
+        }
+        #message{
+            grid-area: message;
+           
+            textarea{
+                width: 100vw;
+                height: 10em;
+            }
+        }
+        .button{
+            grid-area: button;
+        }
+        }
+        display: grid;
+        
+    }
+}
+label{
+    margin-top: 1em;
+    display: block;
+    color: $black;
+    
+}
+input, textarea{
+    box-sizing: border-box;
+    display: block;
+    padding: .75em;
+    width: 100%;
+    border: 2px solid $black;
+    
+}
+
+.button{
+    display: inline-block;
+    width: auto;
+    margin-top: 1em;
+    margin-left: auto;
+    background: $blue;
+    border: none;
+    @include sans-serif($fs: 1.5rem,$color: $black);
+    padding: .5em 1.5em;
+}

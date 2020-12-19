@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate FontAwesome!</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+
+    <style>
+        #chain, #battery, #hourglass{
+            font-size: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="fa" id="chain"></div>
+    <br>
+    <div id="battery" class="fa"></div>
+    <br>
+    <div id="hourglass" class="fa"></div>
+
+</body>
+
+<script>
+    function brakeChain(){
+        let chain = document.getElementById('chain');
+        chain.innerHTML = "&#xf0c1";
+
+        setTimeout(function(){
+            chain.innerHTML = '&#xf127';
+        },500);
+    }
+    brakeChain();
+
+    setInterval(brakeChain, 2000);
+
+    // Call Animation
+
+    // Battery Charge Animation
+    function chargeBattery(){
+        let battery = document.getElementById('battery');
+        battery.innerHTML = '&#xf244';
+        setTimeout(function(){
+            battery.innerHTML = '&#xf243';
+        },500)
+        setTimeout(function(){
+            battery.innerHTML = '&#xf242';
+        },1000)
+        setTimeout(function(){
+            battery.innerHTML = '&#xf241';
+        },1500)
+        setTimeout(function(){
+            battery.innerHTML = '&#xf240';
+        },2000)
+    }
+    chargeBattery();
+
+    setInterval(chargeBattery, 4000);
+
+    // HourGlass Tip Animation
+    function hourglassTip(){
+        let hourGlass = document.getElementById('hourglass');
+        hourGlass.innerHTML = '&#xf251';
+        setTimeout(function(){
+            hourGlass.innerHTML  = '&#xf252';
+        },500)
+        setTimeout(function(){
+            hourGlass.innerHTML  = '&#xf253';
+        },1000)
+    }
+    hourglassTip();
+
+    setInterval(hourglassTip, 3000);
+</script>
+
+
+</html>

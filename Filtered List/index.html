@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Filtered List</title>
+</head>
+<body>
+    <ul class="filter-links">
+        <li><a href="#" id="all">All</a></li>
+        <li><a href="#" id="javascript">JavaScript</a></li>
+        <li><a href="#" id="html">Html</a></li>
+        <li><a href="#" id="css">Css</a></li>
+        <li><a href="#" id="php">Php</a></li>
+    </ul>
+
+    <div class="filtered-sections">
+        <div class="javascript">JavScript</div>
+        <div class="html">Html</div>
+        <div class="css">Css</div>
+        <div class="php">Php</div>
+
+        <div class="javascript">JavScript</div>
+        <div class="html">Html</div>
+        <div class="css">Css</div>
+        <div class="php">Php</div>
+
+        <div class="javascript">JavScript</div>
+        <div class="html">Html</div>
+        <div class="css">Css</div>
+        <div class="php">Php</div>
+
+        <div class="javascript">JavScript</div>
+        <div class="html">Html</div>
+        <div class="css">Css</div>
+        <div class="php">Php</div>
+    </div>
+
+
+
+
+
+    <script>
+        var filterLists = document.querySelector('.filter-links');
+        var js = document.querySelectorAll('.javascript');
+        var html = document.querySelectorAll('.html');
+        var css = document.querySelectorAll('.css');
+        var php = document.querySelectorAll('.php');
+        document.getElementById('all').addEventListener('click',function(e){
+            e.preventDefault();
+            for(let i = 0; i < js.length; i++){
+                js[i].classList.add('view');
+            }
+            for(let i = 0; i < html.length; i++){
+                html[i].classList.add('view');
+            }
+            for(let i = 0; i < css.length; i++){
+                css[i].classList.add('view');
+            }
+            for(let i = 0; i < php.length; i++){
+                php[i].classList.add('view');
+            }
+        })
+
+
+
+        document.getElementById('javascript').addEventListener('click',function(e){
+            e.preventDefault();
+            for(let i = 0; i < js.length; i++){
+                js[i].classList.add('view')
+            }
+            
+            for(let i = 0; i < html.length; i++){
+                html[i].classList.remove('view');
+            }
+            for(let i = 0; i < css.length; i++){
+                css[i].classList.remove('view');
+            }
+            for(let i = 0; i < php.length; i++){
+                php[i].classList.remove('view');
+            }
+        })
+
+        document.getElementById('html').addEventListener('click',function(e){
+            e.preventDefault();
+            for(let i = 0; i < js.length; i++){
+                js[i].classList.remove('view');
+            }
+            
+            for(let i = 0; i < html.length; i++){
+                html[i].classList.add('view');
+            }
+            for(let i = 0; i < css.length; i++){
+                css[i].classList.remove('view');
+            }
+            for(let i = 0; i < php.length; i++){
+                php[i].classList.remove('view');
+            }
+        })
+
+        document.getElementById('css').addEventListener('click',function(e){
+            e.preventDefault();
+            for(let i = 0; i < js.length; i++){
+                js[i].classList.remove('view');
+            }
+            
+            for(let i = 0; i < html.length; i++){
+                html[i].classList.remove('view');
+            }
+            for(let i = 0; i < css.length; i++){
+                css[i].classList.add('view');
+            }
+            for(let i = 0; i < php.length; i++){
+                php[i].classList.remove('view');
+            }
+        })
+
+
+        document.getElementById('php').addEventListener('click',function(e){
+            e.preventDefault();
+            for(let i = 0; i < js.length; i++){
+                js[i].classList.remove('view');
+            }
+            
+            for(let i = 0; i < html.length; i++){
+                html[i].classList.remove('view');
+            }
+            for(let i = 0; i < css.length; i++){
+                css[i].classList.remove('view');
+            }
+            for(let i = 0; i < php.length; i++){
+                php[i].classList.add('view');
+            }
+        })
+
+    </script>
+</body>
+</html>

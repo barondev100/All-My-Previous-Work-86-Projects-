@@ -1,0 +1,36 @@
+// Import
+@import "reset";
+@import "gallery";
+// color
+$color-one: steelblue;
+$color-two: tan;
+$color-three: #333;
+// font
+$font-stack: arial;
+// header
+header{
+  width: 60%;
+  margin: 0 auto;
+  background-color: $color-one;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  .logo{
+    color: #333;
+    margin: 0 15px;
+    font-size: 1.8rem;
+    font-family: $font-stack;
+  }
+    nav{
+      ul{
+        display: flex;
+          li{
+            margin: 0 15px;
+            color: $color-two;
+            font-family: $font-stack;
+          }
+
+      }
+    }
+}

@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,900|Six+Caps");
+body {
+  font-family: "Merriweather", serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #252525;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: 10em 50vh auto 10em;
+  grid-template-columns: 1fr 5fr 2fr 1fr;
+  grid-template-areas: "header header header header" "hero hero hero hero" ". main sidebar ." "footer footer footer footer";
+  grid-column-gap: 1.5em;
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: header;
+}
+
+header, footer {
+  background: #252525;
+  color: hotpink;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-title, .footer-title {
+  font-family: "Six Caps", sans-serif;
+  font-size: 2.875rem;
+  color: hotpink;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.hero {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: hero;
+  background: url(../background.jpg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.hero-title {
+  font-family: "Six Caps", sans-serif;
+  font-size: 6rem;
+  color: hotpink;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-family: "Merriweather", serif;
+  font-size: 2.875rem;
+  font-weight: 300;
+  color: #fff;
+  margin: 0;
+}
+
+main {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: main;
+}
+
+aside {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+  grid-area: sidebar;
+  background: #e8e8e8;
+  padding: 2em;
+}
+
+footer {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: footer;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: -webkit-min-content auto;
+  grid-template-rows: min-content auto;
+  grid-template-areas: "img title" "img content";
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.5);
+  padding: 1.5em;
+  grid-column-gap: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.card-img {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  max-width: 100%;
+  grid-area: img;
+}
+
+.card-title {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  margin: 0;
+  grid-area: title;
+}
+
+.card-content {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: content;
+}
+.card-content a {
+  color: hotpink;
+  font-size: 1.1em;
+}

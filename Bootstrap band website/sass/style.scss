@@ -1,0 +1,26 @@
+@import "vendor/bootstrap";
+@import "abstracts/variables";
+@import "components/navigation";
+@import "base/typography";
+@import "pages/home";
+@import "components/parallax";
+@import "components/footer";
+*{
+   text-decoration: none;
+}
+@font-face {
+  font-family: font-primary;
+  src: url(../BA-Wet_Paint.otf);
+}
+@font-face {
+  font-family: font-secondary;
+  src: url(../Mr.Poppey.ttf);
+}
+@font-face {
+  font-family: font-third;
+  src: url(../Madina.ttf);
+}
+
+$light: 300;
+$normal: 400;
+$bold: 500;

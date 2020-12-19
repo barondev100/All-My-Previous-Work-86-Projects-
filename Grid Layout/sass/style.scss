@@ -1,0 +1,138 @@
+// Google font
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,900|Six+Caps');
+
+// ===== Variables ===== //
+
+// Fonts stuff
+$six-caps: 'Six Caps', sans-serif;
+$merriweather: 'Merriweather', serif;
+
+$ff-base: $merriweather;
+$ff-alt: $six-caps;
+
+$fs-base: 1rem;
+$fs-h1: 3.75rem;
+$fs-h2: 2.875rem;
+$fs-h3: 2.25rem;
+$fs-xl: 6rem;
+
+// Colours
+$black: #252525;
+$yellow: hotpink;
+$light-gray: #c2c2c2;
+$dark-gray: #e8e8e8;
+$white: #fff;
+
+
+
+// ===== Mixins ===== //
+
+@mixin font-base($font-size: $fs-base, $font-weight: 300, $color: $black) {
+    font: {
+      family: $ff-base;
+      size: $font-size;
+      weight: $font-weight;
+    }
+    color: $color;
+  } 
+  
+@mixin font-alt($font-size: $fs-base, $color: $black) {
+    font: {
+      family: $ff-alt;
+      size: $font-size;
+    }
+    color: $color;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+  }
+// .card-img{
+//     width: 200px;
+// }
+body{
+    @include font-base;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 10em 50vh auto 10em;
+    grid-template-columns: 1fr 5fr 2fr 1fr;
+    grid-template-areas: 'header header header header'
+                        'hero hero hero hero'
+                        '. main sidebar .'
+                        'footer footer footer footer';
+    grid-column-gap: 1.5em;;
+    
+}
+header{
+    grid-area: header;
+}
+header,footer{
+    background: $black;
+    color: $yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header-title,.footer-title{
+   @include font-alt($color: $yellow, $font-size: $fs-h2);
+}
+
+.hero{
+    grid-area: hero;
+    background: url(../background.jpg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+}
+.hero-title{
+    @include font-alt($fs-xl,$yellow);
+    margin: 0;
+}
+.hero-subtitle{
+    @include font-base($color:$white,$font-size:$fs-h2);
+    margin: 0;
+}
+main{
+    grid-area: main;
+}
+aside{
+    grid-area: sidebar;
+    background: $dark-gray;
+    padding: 2em;
+}
+
+footer{
+    grid-area: footer;
+}
+.card{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: min-content auto;
+    grid-template-areas: 'img title'
+        'img content'
+    ;
+    box-shadow:  0 0 1em rgba(0,0,0,0.5);
+    padding: 1.5em;
+    grid-column-gap: 1.5em;
+    margin-bottom: 1.5em;
+}
+.card-img{
+    max-width: 100%;
+    grid-area: img;
+}
+.card-title
+{
+    margin: 0;
+    grid-area: title;
+   
+}
+.card-content{
+    grid-area: content;
+   a{
+       color: $yellow;
+       font-size: 1.1em;
+   }
+}

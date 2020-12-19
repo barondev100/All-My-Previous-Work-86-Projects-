@@ -1,0 +1,15 @@
+.parallax{
+    // display: none;
+    @include media-breakpoint-up(md){
+    background-position: center;
+    height: 30vmax;
+    background-size: cover;
+    background-attachment: fixed;
+    display: "block";
+    }
+}   
+
+
+.parallax-home{
+    background-image: url(../img/band-parralax.jpg);
+}

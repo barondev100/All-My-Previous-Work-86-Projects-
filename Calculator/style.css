@@ -1,0 +1,85 @@
+*
+{
+	box-sizing: border-box;
+}
+.calculator
+{
+    width: 500px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    box-shadow: 2px 2px 9px #aaa;
+    position:relative;
+}
+
+.calculator .key
+{
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+.calculator .numpad
+{
+    padding: 10px;
+}
+
+.calculator .numpad > div
+{
+    text-align:center;
+    cursor:pointer;
+    display:inline-block;
+    width:33%;
+    padding: 10px;
+}
+
+.calculator .numpad div:last-child
+{
+    width:100%;
+}
+
+.calculator .numpad > div:hover
+{
+    background:#333;
+    color:white;
+}
+
+.calculator .operators
+{
+    display:flex;
+}
+
+.calculator .operators > div{
+    display:inline-block;
+    font-weight: bold;
+    padding:10px;
+    cursor:pointer;
+    flex: 1 1 0;
+    background:dodgerblue;
+    color:white;
+}
+
+.screen
+{
+    padding:10px;
+    background:black;
+    color:white;
+    text-align:right;
+    font-size: 18px;
+    font-weight:bold;
+}
+
+.screen.buffer
+{
+    position:absolute;
+    top:0px;
+    right:10px;
+    font-size:11px;
+}
+
+.screen.total
+{
+    font-size: 22px;
+    padding:20px;
+}

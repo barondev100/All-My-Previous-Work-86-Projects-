@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>TV RATINGS</title>
+    <style>
+        .stars-outer{
+            position: relative;
+            display: inline-block;
+        }
+        .stars-inner{
+            position: absolute;
+            top: 0;
+            left: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+        }
+        .stars-outer::before{
+            content:'\f005 \f005 \f005 \f005 \f005';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #ccc;
+        }
+        .stars-inner::after{
+            content:'\f005 \f005 \f005 \f005 \f005';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+
+        <div class="form-group">
+            <select id="product-select" class="form-control">
+                <option value="0" disabled selected>Select Product</option>
+                <option value="sony">Sony 4k TV</option>
+                <option value="samsung">Samsung 4k TV</option>
+                <option value="vizio">VIZIO TV</option>
+                <option value="panasonic">Panasonic</option>
+                <option value="phillips">Phillips</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <input type="number" id="rating-control" class="form-control" step="0.1" max="5" placeholder="RATE 1 - 5" disabled>
+        </div>
+
+
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>4k TV</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class="sony">
+                    <td>Sony 4k TV</td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+
+                <tr class="samsung">
+                    <td>Samsung 4k TV</td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+
+                <tr class="vizio">
+                    <td>Vizio 4k TV</td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+
+                <tr class="panasonic">
+                    <td>Panasonic 4k TV</td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+
+                
+                <tr class="phillips">
+                    <td>Phillips 4k TV</td>
+                    <td>
+                        <div class="stars-outer">
+                            <div class="stars-inner"></div>
+                        </div>
+                        <span class="number-rating"></span>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+    </div>
+</body>
+
+
+
+<script>
+    //Ratings
+    const ratings = {
+        sony: 4.7,
+        samsung: 4.3,
+        vizio: 3.5,
+        panasonic: 4.1,
+        phillips: 4
+    }
+
+    const starTotal = 5;
+    //Get Ratings On Dom Loads
+    document.addEventListener('DOMContentLoaded', getRatings);
+    const productSelect = document.getElementById('product-select');
+    const ratingControl = document.getElementById('rating-control');
+
+    //Init
+    let product;
+
+    productSelect.addEventListener('change',(e)=>{
+        product = e.target.value;
+        console.log(product);
+
+        ratingControl.disabled = false;
+        ratingControl.value = ratings[product];
+    })
+
+    // Rating Control Change
+    ratingControl.addEventListener('blur',(e)=>{
+        const rating = e.target.value;
+        if(rating > 5){
+            alert('Please Rate 1 - 5');
+            return;
+        }
+        ratings[product] = rating;
+        getRatings();
+    })
+
+    function getRatings(){
+        for(let rating in ratings){
+            //Get % Value;
+            const starPercentage = (ratings[rating]/starTotal) * 100;
+
+            //Round To Nearest Ten
+            const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`; 
+            console.log(starPercentageRounded);
+
+            document.querySelector(`.${rating} .stars-inner`).style.width = starPercentageRounded;
+            document.querySelector(`.${rating} .number-rating`).innerHTML = ratings[rating];
+
+        }
+    }
+</script>
+
+</html>

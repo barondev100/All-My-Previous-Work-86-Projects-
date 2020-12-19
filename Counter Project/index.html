@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Counter!</title>
+</head>
+<body class="bg-warning">
+    <div class="container text-center">
+        <div class="jumbotron">
+            <h1>Counter</h1>
+            <h2 id="number">Number</h2>
+            <button type="button" class="btn btn-danger" id="up">Count Up</button>
+            <button type="button" class="btn btn-primary" id="down">Count Down</button>  
+        </div>
+    </div>
+
+
+
+    <script>
+
+        const number = document.querySelector('#number');
+        const up = document.querySelector('#up');
+        const down = document.querySelector('#down');
+        let count = 0;
+
+        up.addEventListener('click',function(){
+            count += 1;
+            number.innerHTML = count;
+        })
+        down.addEventListener('click',function(){
+            count -= 1;
+            number.innerHTML = count;
+        })
+        
+    </script>
+</body>
+</html>

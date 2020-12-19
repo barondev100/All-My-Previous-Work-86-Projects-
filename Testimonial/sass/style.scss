@@ -1,0 +1,151 @@
+@import 'slider';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// Color Values
+$blue: steelblue;
+$gray-blue: lighten(steelblue,0.5);
+
+//Mixins
+
+@mixin flex-centered(){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-column($prop){
+    display: flex;
+    flex-direction: column;
+    justify-content: $prop;
+}
+
+@mixin box-shadow($hlength, $vlength, $blur-radius, $spread-radius, $color){
+    box-shadow: $hlength $vlength $blur-radius $spread-radius $color;
+}
+
+html{
+    min-height: 100vh;
+}
+body{
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+}
+
+.outer-container{
+    @include flex-column(space-between);
+    min-height: 100vh;
+}
+
+.container{
+    @include flex-centered();
+    flex-grow: 1;
+    height: 100%;
+}
+.testimonials{
+    @include flex-centered();
+    @include box-shadow(2px , 5px , 20px, -5px, $gray-blue);
+    margin: 0 15px;
+
+    .slide{
+        .slide-content{
+            background-image: url(../img/pattern-curve.svg);
+            background-repeat: no-repeat;
+            background-position: left 103%;
+            background-size: 90%;
+            padding: 5%;
+            padding-bottom: 20%;
+        }
+        .testimonial-image-box{
+            @include flex-centered();
+            background-image: url(../img/pattern-bg.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 100%;
+            .image-box{
+                @include flex-centered();
+                width: 100%;
+                padding: 11%;
+                .image{
+                    overflow: hidden;
+                    position: relative;
+                    top: 24px;
+                    border-radius: 5px;
+                    @include box-shadow(-60px, 100px, 45px, -85px, $gray-blue);
+                    .user-image{
+                        @include flex-centered();
+                        width: 100%;
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            .slider{
+                @include flex-column(center);
+                position: relative;
+                top: 2px;
+                background-color: #fff;
+                border-radius: 30px;
+                .prev,.next{
+                    padding: 15px;
+
+                    .arrow{
+                        @include flex-centered();
+                        width: 12px;
+                        height: 12px;
+                        overflow: hidden;
+                        &:hover{
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+            }
+        }
+
+        .testimonial-text-box{
+            background-image: url(../img/pattern-quotes.svg);
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: 18%;
+            text-align: center;
+
+            .testimonial{
+                padding: 25px 15px 20px
+            }
+        }
+    }
+}
+
+
+
+
+/// Media BreakPoints
+
+$breakpoint-md: 768px;
+$testimonial-max-width-1: 425px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1440px;
+
+
+
+@media screen and(max-width:$breakpoint-md - 1px){
+    .testimonials{
+        max-width: $testimonial-max-width-1;
+    }
+}
+
+
+
+//Medium Breakpoint
+@media screen and (min-width: $breakpoint-md){
+    .testimonial{
+        width: 55.3%;
+    }
+}

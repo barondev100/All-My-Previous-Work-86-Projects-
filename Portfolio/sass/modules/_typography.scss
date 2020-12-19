@@ -1,0 +1,18 @@
+$ff-s: 'Vollkorn', serif;
+$ff-ss: 'Amarante', sans-serif;
+
+
+$fw-n: 400;
+$fw-b: 900;
+
+
+
+@mixin sans-serif($fs,$ls: .15em,$color: $black,$tt: uppercase,$lh: 1){
+    letter-spacing: $ls;
+    font-size: $fs;
+    color: $color;
+    text-transform: $tt;
+    line-height: $lh;
+    font-family: $ff-ss;
+    font-weight: $fw-n;
+}

@@ -1,0 +1,281 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+body {
+  line-height: 1;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+.wrapper-gallery {
+  margin: 20px 20vw;
+}
+
+#index-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 10px;
+  grid-template-areas: "gallery-p gallery-p gallery-p gallery-p" "gallery-h2 gallery-h2 gallery-h2 gallery-h2" "img1 img2 img3 img4" "img5 img6 img3 img7";
+}
+#index-gallery p {
+  font-size: 14px;
+  font-family: arial;
+}
+#index-gallery h2 {
+  font-size: 30px;
+  font-family: arial;
+}
+#index-gallery .gallery-img {
+  width: 100%;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+}
+#index-gallery .gallery-img div {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#index-gallery .gallery-img div:hover {
+  opacity: 0.7;
+  transition: all ease-in-out 300ms;
+}
+#index-gallery .gallery-img a {
+  font-family: arial;
+  font-size: 1.2em;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#index-gallery p {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: gallery-p;
+}
+#index-gallery h2 {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 7;
+  grid-area: gallery-h2;
+}
+#index-gallery .img1 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+  grid-area: img1;
+  background-image: url("../img/thumb/img-1.jpg");
+}
+#index-gallery .img2 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 3;
+  grid-area: img2;
+  background-image: url("../img/thumb/img-2.jpg");
+}
+#index-gallery .img3 {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 5;
+  grid-area: img3;
+  background-image: url("../img/thumb/img-3.jpg");
+  height: 610px;
+}
+#index-gallery .img4 {
+  -ms-grid-row: 5;
+  -ms-grid-column: 7;
+  grid-area: img4;
+  background-image: url("../img/thumb/img-4.jpg");
+}
+#index-gallery .img5 {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  grid-area: img5;
+  background-image: url("../img/thumb/img-5.jpg");
+}
+#index-gallery .img6 {
+  -ms-grid-row: 7;
+  -ms-grid-column: 3;
+  grid-area: img6;
+  background-image: url("../img/thumb/img-6.jpg");
+}
+#index-gallery .img7 {
+  -ms-grid-row: 7;
+  -ms-grid-column: 7;
+  grid-area: img7;
+  background-image: url("../img/thumb/img-7.jpg");
+}
+
+.img-window {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.img-window img {
+  max-height: 80vh;
+  max-width: 80vw;
+}
+
+.img-btn-next {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background-color: #111111;
+  position: fixed;
+  top: 48vh;
+  z-index: 500;
+  font-family: arial;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.img-btn-next:hover {
+  opacity: 0.8;
+}
+
+.img-btn-prev {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 4px;
+  background-color: #111111;
+  position: fixed;
+  top: 48vh;
+  z-index: 500;
+  font-family: arial;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.img-btn-prev:hover {
+  opacity: 0.8;
+}
+
+header {
+  width: 60%;
+  margin: 0 auto;
+  background-color: steelblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+}
+header .logo {
+  color: #333;
+  margin: 0 15px;
+  font-size: 1.8rem;
+  font-family: arial;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  margin: 0 15px;
+  color: tan;
+  font-family: arial;
+}

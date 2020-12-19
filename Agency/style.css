@@ -1,0 +1,398 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+/* My Code */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap'); /*font-family: 'Raleway', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap'); /* font-family: 'Anton', sans-serif;*/
+
+/* Fonts */
+
+/* Main Code */
+*{
+    box-sizing: border-box;
+    transition: all ease-in-out 250ms;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    /* overflow-x: hidden; */
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header */
+header{
+    position: absolute;
+    left: 0;
+    right:0;
+    margin: 1em;
+}
+.logo{
+    font-size: 2em;
+    font-family: 'Anton', sans-serif;
+    color: #09CAB8;
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+nav li{
+    display: inline-block;
+    margin: 1em;
+}
+nav a{
+    font-weight: 800;
+    text-decoration:none;
+    text-transform: uppercase;
+    font-size: .8rem;
+    padding: .75em;
+    color: #fff;
+}
+nav a:hover,
+nav a:focus
+{
+    color: #ddd;  
+}
+
+
+
+
+/* home-hero */
+/* ========== */
+/* PARALX ALSO */
+.parallax--bg{
+    transition: initial;   
+
+}
+.parallax--box{
+    transition: initial;
+}
+.home-hero{
+    background-image: url(img/hero.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 10em 0;
+    background-attachment: fixed;
+    transition: initial;   
+}
+.container{
+    width: 95%;
+    margin: 0 auto;
+    max-width: 70em;
+}
+/* Typography */
+.title{
+font-size: 2.5rem;
+color: #fff;
+margin-bottom: 1.5em;
+}
+.title span{
+    font-weight: 0;
+    display: block;
+    font-size: .8em;
+    color: aliceblue;
+}
+/* button */
+.button{
+    display: inline-block;
+    font-size: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-width: 2px;
+    border-style: solid;
+    padding: .5em 1.75em
+}
+.button-color{
+    color: #09CAB8;
+}
+.button-color:hover,
+.button-color:focus
+{
+    background-color:  #09CAB8;
+    color: white;
+    border-color: #09CAB8;
+}
+
+@media (min-width:60rem){
+    .title{
+        font-size: 3.7rem;
+    }
+    .title span{
+        font-size: 2.7rem;
+    }
+    .logo{
+        float: left;
+    }
+    nav{
+        float: right;
+    }
+    .home-hero{
+        height: 100vh;
+        padding-top: 45vh;
+    }
+    .button{
+        font-size: 1.7rem;
+    }
+    
+}
+
+
+/* Home About */
+h1{
+    font-weight: 300;
+    font-size: 1.8rem;
+}
+
+.home-about-textbox{
+    background-color: #232323;
+    padding: 4em;
+    width: 100vw;
+    margin-left: -2.6%;
+    outline: 2px solid #09CAB8;
+    outline-offset: -2.5em;
+    color: #fff;
+    position: relative;
+    top: -5em;
+}
+.home-about-textbox h1{
+    color: #09CAB8;
+    margin-bottom: 1em;
+    position: absolute;
+    top: .75em;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #232323;
+}
+.home-about-textbox p{
+    line-height: 1.5;
+    text-align: center;
+}
+
+@media (min-width: 25rem){
+    h1{
+        font-size: 2rem;
+    }
+    .home-about-textbox h1{
+        top: .6em;
+        padding: 0 .25em;
+    }
+}
+
+@media (min-width: 60rem){
+    h1{
+        font-size: 2.5rem;
+    }
+    .home-about{
+        background-image: url(img/night-life.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-bottom: 10em;
+    }
+    .home-about-textbox{
+        width: 50%;
+        text-align: left;
+        margin-left: -2.6%;
+        top: -5em;
+        box-shadow:  0 0 4rem 0 rgba(0,0,0,.5);
+        padding: 7em;
+        outline-offset: -3.75em;
+    }
+    .home-about-textbox h1{
+        top: .75em;
+        left: 6.25rem;
+        transform: translateX(0);
+    }
+   
+}
+
+
+/* Portfolio */
+.button-small{
+    font-size: .8rem;
+    font-weight: 700;
+}
+.portfolio{
+    margin: 3em 0 ;
+}
+figure{
+    margin: 0;
+}
+.port-item{
+    margin: 0;
+    position: relative;
+}
+.port-item img{
+  display: inline-block;
+}
+.port-description{
+ position:  absolute;
+ z-index: 5;
+ bottom: 3em;
+ left: 2em;
+ right: 3em;
+ color: wheat;
+ background: rgba(0,0,0,.65);
+ padding: 1em;
+ padding-bottom: 2em;
+}
+
+.port-description p {
+    margin: 1em;
+}
+
+
+@media (min-width: 37rem){
+    .port-item{
+        width: 50%;
+        float: left;
+    }
+    
+}
+@media (min-width: 60rem){
+    .port-item{
+        width: 33.3333334%;
+        float: left;
+        overflow: hidden;
+    }
+    .port-description{
+        transform: translateY(150%);
+    }
+    .port-item:hover .port-description{
+        transform: translateY(0%);
+    }
+}
+
+
+
+
+
+/* CTA */
+.clearfix::after,
+section::after,footer::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.cta{
+    background-image: url(img/hero.jpg);
+    padding: 5rem 0;
+}
+.title-cta{
+    margin: 0 0 .5em;
+}
+
+
+
+
+footer{
+    background: #232323;
+    color: #fff;
+    text-align: left;
+    padding: 5em 0;
+}
+.unstyled-list{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+/* Column System */
+[class^=col-]{
+    width: 100%;
+    margin-top: 1em;
+}
+[class^=col-]:first-child{
+    margin-top: 0;
+    
+}
+.col-1{
+    width: 33.333334%;
+    float: left;
+}
+
+@media (min-width: 40rem){
+    .col-3{
+        width: 50%;
+    }
+    
+    .col-1{
+        width: 16.6666%;
+    }
+    [class^=col-]{
+       float: left;
+       padding: 0 .5em;
+       margin-top: 0;
+        
+    }
+    [class^=col-]:first-child{
+        float: left;
+        padding-left: 0;
+        
+    }
+    [class^=col-]:last-child{
+        float: left;
+        padding-right: 0;
+        
+    }
+}
+
+
+
+
+

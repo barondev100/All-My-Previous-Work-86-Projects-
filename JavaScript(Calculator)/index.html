@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript Calculator</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+
+        <form>
+            Value 1: <input type="text" id="value1"><br>
+            Value 2: <input type="text" id="value2">
+            Operator: 
+            <select id="operator">
+                <option value="Add">+</option>
+                <option value="minus">-</option>
+                <option value="devide">/</option>
+                <option value="multiply">*</option>
+            </select>
+            <button type="button" onclick="calc()">Calculate</button>
+        </form>
+
+        <div id="result"></div>
+        
+
+    </body>
+    <script src="script.js"></script>
+</html>

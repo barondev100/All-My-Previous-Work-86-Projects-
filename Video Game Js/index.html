@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Game</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oldenburg&display=swap" rel="stylesheet">
+    <!-- Font Family  font-family: 'Oldenburg', cursive;-->
+    <!-- Css -->
+    <link rel="stylesheet" href="style.css">
+
+
+        <script src="js/gamemanager.js"></script>
+        <script src="js/player.js"></script>
+        <script src="js/enemy.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <p>Free To Play Awesome Rpg Game!</p>
+        <h2>Choose Your Character</h2>
+    </div>
+
+
+    <!-- InterFace -->
+    <div class="interface">
+        <!-- Warrior -->
+        <div class="yup">
+            <a href="#" onclick="GameManager.setGameStart('Warrior')">
+                <img src="img/player/Warrior.jpg" alt="Warrior">
+                <div>
+                    <h3>Warrior</h3>
+                    <p>Warrior have high health and stamina but their strength also makes them slow and clumsy!</p>
+                </div>
+            </a>
+        </div>
+
+
+        <!-- Rogue -->
+        <div  class="yup">
+            <a href="#" onclick="GameManager.setGameStart('Rogue')">
+                <img src="img/player/Rogue.jpg" alt="Rogue">
+                <div>
+                    <h3>Rogue</h3>
+                    <p>Rogues are fast and have high stamina and speed which makes up for their lack of strength and health</p>
+                </div>
+            </a>
+        </div>
+
+
+        <!-- Mage -->
+        <div  class="yup">
+            <a href="#" onclick="GameManager.setGameStart('Mage')">
+                <img src="img/player/Mage.jpg" alt="Mage">
+                <div>
+                    <h3>Mage</h3>
+                    <p>Mages are glass canons which puts all their effort into spells.This means they slack on everything</p>
+                </div>
+            </a>
+        </div>
+
+
+        <!-- Archer -->
+        <div  class="yup">
+            <a href="#" onclick="GameManager.setGameStart('Archer')">
+                <img src="img/player/Archer.jpg" alt="Archer">
+                <div>
+                    <h3>Archer</h3>
+                    <p>Archers are well rounded fighters that focus on evening out their skills. No strength or weakness</p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- Action -->
+    <div class="action">
+
+    </div>
+
+    <!--Arena  -->
+    <div class="arena">
+
+    </div>
+
+    <!-- Enemy -->
+    <div class="enemy">
+
+
+    </div>
+
+
+</body>
+
+</html>

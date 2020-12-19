@@ -1,0 +1,33 @@
+body{
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #777;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #fff;
+    border-radius: 15px;
+}
+.btn{
+    border: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    color: #fff;
+}
+.btn:hover{
+    background: #fff;
+    color: black;
+}

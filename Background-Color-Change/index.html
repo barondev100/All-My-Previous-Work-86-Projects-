@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Background-Color-Change</title>
+    <style>
+        body{
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body class="text-warning">
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="btn btn-danger m-5" id="changeBtn">Change Me!</div>
+        </div>
+        
+    </div>
+    
+</body>
+
+<script>
+
+    const btn = document.querySelector('#changeBtn');
+    btn.addEventListener('click', changeColor);
+    //Change Color
+    function changeColor(){
+        document.body.style.backgroundColor = random_rgba();
+    }
+
+    // Random Rgba Function 
+    function random_rgba() {
+    var o = Math.round, r = Math.random, s = 255;
+    return 'rgba(' + o(r()*s) + ',' + o(r()*s) + ',' + o(r()*s) + ',' + r().toFixed(1) + ')';
+}
+</script>
+</html>
